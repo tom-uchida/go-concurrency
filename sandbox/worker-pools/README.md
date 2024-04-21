@@ -6,20 +6,20 @@
 sequenceDiagram
     autonumber
     participant main as main
-    participant jobs as jobs(chan Job)
-    participant workers as worker(goroutine)
-    participant results as results(chan string)
+    participant jobs as jobs[chan Job]
+    participant workers as func worker()
+    participant results as results[chan string]
     
     loop Num of workers
-        main ->> workers: Start a worker
+        main ->> workers: Start a worker goroutine
     end
 
     loop Num of jobs
-        main ->> jobs: Send a job
+        main ->> jobs: Send a job[jobs chan<-]
         Note left of workers: Concurrent
-        workers ->> jobs: Get a job
+        jobs ->> workers: Receive a job[jobs <-chan]
         workers ->> workers: HTTP request
-        workers ->> results: Send a response
+        workers ->> results: Send a response[results chan<-]
     end
 ```
 
