@@ -5,7 +5,7 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    participant main as main
+    participant main as func main()
     participant jobs as jobs[chan Job]
     participant workers as func worker()
     participant results as results[chan string]
