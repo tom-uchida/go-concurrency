@@ -3,14 +3,23 @@
 並行処理のシンプルな実装例。
 
 ```bash
-9 tasks
-2024/02/10 18:40:06 task5 done.(1sec)
-2024/02/10 18:40:07 task3 done.(2sec)
-2024/02/10 18:40:09 task6 done.(4sec)
-2024/02/10 18:40:10 task1 done.(5sec)
-2024/02/10 18:40:10 task9 done.(5sec)
-2024/02/10 18:40:10 task2 done.(5sec)
-2024/02/10 18:40:10 task7 done.(5sec)
-2024/02/10 18:40:11 task4 done.(6sec)
-2024/02/10 18:40:12 task8 done.(7sec)
+6 tasks
+2025/02/09 01:43:52 func1: task1 done.(1sec)
+2025/02/09 01:43:52 func1: task4 done.(1sec)
+2025/02/09 01:43:53 func1: task2 done.(2sec)
+2025/02/09 01:43:53 func1: task6 done.(2sec)
+2025/02/09 01:43:54 func1: task5 done.(3sec)
+2025/02/09 01:43:54 func1: task3 done.(3sec)
+2025/02/09 01:43:55 func2: task3 done.(1sec)
+2025/02/09 01:43:55 func2: task6 done.(1sec)
+2025/02/09 01:43:56 func2: task5 done.(2sec)
+2025/02/09 01:43:56 func2: task1 done.(2sec)
+2025/02/09 01:43:56 func2: task4 done.(2sec)
+2025/02/09 01:43:57 func2: task2 done.(3sec)
+2025/02/09 01:43:59 func3: task3 done.(2sec)
+2025/02/09 01:43:59 func3: task5 done.(2sec)
+2025/02/09 01:43:59 func3: task4 done.(2sec)
+2025/02/09 01:43:59 func3: task2 done.(2sec)
+2025/02/09 01:43:59 func3: task1 done.(2sec)
+2025/02/09 01:44:00 func3: task6 done.(3sec)
 ```
