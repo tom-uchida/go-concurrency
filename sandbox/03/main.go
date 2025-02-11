@@ -3,24 +3,22 @@ package main
 import (
 	"fmt"
 	"log"
-	"math/rand"
 	"sync"
 	"time"
 )
-
-const taskNum = 36
 
 type Item struct {
 	Name string
 }
 
 func main() {
-	fmt.Printf("%d items\n", taskNum)
+	const itemNum = 100
+	fmt.Printf("%d items\n", itemNum)
 	fmt.Println()
 
-	items := createItems(taskNum)
+	items := createItems(itemNum)
 
-	validItems := make([]Item, 0, taskNum)
+	validItems := make([]Item, 0, itemNum)
 	var wg sync.WaitGroup
 	var mu sync.Mutex
 	for _, item := range items {
@@ -40,18 +38,16 @@ func main() {
 	log.Printf("valid items: %d", len(validItems))
 }
 
-func createItems(taskNum int) []Item {
-	items := make([]Item, taskNum)
-	for i := 0; i < taskNum; i++ {
+func createItems(itemNum int) []Item {
+	items := make([]Item, itemNum)
+	for i := 0; i < itemNum; i++ {
 		items[i] = Item{Name: fmt.Sprintf("item%d", i+1)}
 	}
 	return items
 }
-
 func validate(item Item) bool {
 	// something validation
-	duration := rand.Intn(3) + 1
-	time.Sleep(time.Duration(duration) * time.Second)
+	time.Sleep(time.Second * 1)
 
 	log.Printf("%s: validation done.", item.Name)
 	return true
